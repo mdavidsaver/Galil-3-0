@@ -63,7 +63,7 @@
 #include "GalilPoller.h"
 #include "epicsMessageQueue.h"
 
-#include <unordered_map> //used for data record features
+#include <map> //used for data record features
 #include <vector>
 
 // drvInfo strings for extra parameters that the Galil controller supports
@@ -438,7 +438,7 @@ protected:
 
 private:
 
-  std::unordered_map<std::string, Source> map; //data structure for data record
+  std::map<std::string, Source> map; //data structure for data record
 
   char cmd_[MAX_GALIL_STRING_SIZE];	//holds the assembled Galil cmd string
   char resp_[MAX_GALIL_DATAREC_SIZE];	//Response from Galil controller

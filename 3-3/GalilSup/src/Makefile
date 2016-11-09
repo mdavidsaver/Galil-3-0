@@ -14,9 +14,6 @@ LIBRARY_IOC += GalilSupport
 # install devMotorSoft.dbd into <top>/dbd
 DBD += GalilSupport.dbd
 
-#Require C++ 2011 standard compatibility
-USR_CXXFLAGS_Linux += -std=c++11
-
 # For sCalcPostfix.h
 USR_INCLUDES += -I$(CALC)/calcApp/src
 

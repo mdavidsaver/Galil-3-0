@@ -237,8 +237,18 @@
 #include <sstream> //format source keys, string stream
 #include <iomanip> //format source keys
 #include <algorithm> //std::remove_if
+#include <vector>
+#include <stdexcept>
 
-using namespace std; //cout ostringstream vector string
+using std::cout;
+using std::setw;
+using std::setfill;
+using std::right;
+using std::endl;
+using std::ostringstream;
+using std::vector;
+using std::string;
+using std::stringstream;
 
 #include <epicsString.h>
 #include <iocsh.h>
@@ -4729,7 +4739,7 @@ void GalilController::GalilStartController(char *code_file, int burn_program, in
 		//Change \n to \r (Galil Communications Library expects \r separated lines)
 		std::replace(uc.begin(), uc.end(), '\n', '\r');
 		//Some controllers dont finish upload with \r\n, ensure buffer ends in carriage return
-		if (uc.back() != 13)
+		if (uc[uc.size()-1] != 13)
 			uc.push_back('\r');
 		//Download code
 		//Copy card_code_ into download code buffer
