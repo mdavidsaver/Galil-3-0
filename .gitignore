@@ -1,1 +1,9 @@
 /.project
+O.*/
+/*/bin
+/*/db
+/*/dbd
+/*/lib
+cdCommands
+dllPath.bat
+envPaths
